@@ -1,0 +1,239 @@
+* {
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    user-select: none !important;
+    -webkit-user-select: none;
+}
+
+body {
+    overflow: hidden !important;
+    max-width: 100% !important;
+    max-height: 100vh !important;
+    min-height: 100vh !important;
+    min-width: 100% !important;
+    color: #fff !important;
+    font-family: sans-serif !important;
+    position: relative !important;
+}
+
+.player {
+    background: #000 !important;
+}
+
+/* video siz is fixed to window size  */
+video {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    /* object-fit: cover!important; */
+}
+
+.playpause {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 1 !important;
+}
+
+.controls-top {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100px !important;
+    background: linear-gradient(#000, #000000bb, #00000075, transparent) !important;
+    padding: 20px !important;
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    /* max-width: 90%!important; */
+    z-index: 2 !important;
+}
+
+.controls-top .title {
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    margin-left: 20px !important;
+    break-inside: auto !important;
+    break-before: always !important;
+    word-break: break-all !important;
+}
+
+.controls-bottom {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    padding: 20px !important;
+    width: 100% !important;
+    height: 100px !important;
+    background: linear-gradient(transparent, #00000075, #000000bb, #000) !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-direction: column !important;
+    z-index: 2 !important;
+}
+
+.progress {
+    width: 100% !important;
+    height: 5px;
+    background: #a0a0a0 !important;
+    border-radius: 50px !important;
+    position: relative !important;
+    margin-bottom: 10px !important;
+    cursor: pointer !important;
+    transition: height .3s ease;
+}
+
+.progress:hover {
+    height: 20px;
+}
+
+.progress .progress-bar {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    height: 100% !important;
+    background: #fff !important;
+    border-radius: 50px !important;
+    /* transition: height 0.3s ease!important; */
+    width: 15px;
+    display: flex !important;
+    justify-content: end !important;
+    align-items: center !important;
+}
+
+.progress .progress-bar .progress-bar-dot {
+    position: relative !important;
+    width: 15px !important;
+    height: 15px !important;
+    background: #fff !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: start !important;
+}
+
+.progress .progress-bar .progress-bar-dot .dot-time {
+    position: absolute !important;
+    top: -30px !important;
+    font-weight: 600 !important;
+    background: #000000c9 !important;
+    padding: 3px !important;
+    border-radius: 3px !important;
+    opacity: 0;
+    transition: opacity .3s ease !important;
+}
+
+.bottom-controls {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+.bottom-controls .left {
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+}
+
+.bottom-controls .left button {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    cursor: pointer !important;
+    margin-right: 10px !important;
+    padding: 5px !important;
+    border-radius: 50% !important;
+    transition: all 0.3s ease !important;
+    color: #fff !important;
+    font-size: 1.2rem !important;
+}
+
+.bottom-controls .left input {
+    width: 100px !important;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    cursor: pointer !important;
+    margin-right: 10px !important;
+    transition: all 0.3s ease !important;
+    color: #fff !important;
+    font-size: 1.2rem !important;
+    position: relative !important;
+}
+
+.bottom-controls .left input~.volume-range-progress {
+    position: absolute !important;
+    left: 150px !important;
+    width: 100px !important;
+    height: 5px !important;
+    z-index: -1 !important;
+    background: #fff !important;
+    border-radius: 50px !important;
+}
+
+.bottom-controls .left button:focus {
+    background: #fff !important;
+    color: #000 !important;
+}
+
+.bottom-controls .left button:hover {
+    background: #fff !important;
+    color: #000 !important;
+}
+
+.bottom-controls .right {
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+}
+
+.bottom-controls .right button {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    cursor: pointer !important;
+    margin-left: 10px !important;
+    padding: 5px !important;
+    border-radius: 50% !important;
+    transition: all 0.3s ease !important;
+    color: #fff !important;
+    font-size: 1.2rem !important;
+}
+
+/* range styles */
+input[type="range"] {
+    -webkit-appearance: none !important;
+    width: 100% !important;
+    height: 5px !important;
+    background: transparent !important;
+    outline: none !important;
+    border-radius: 5px !important;
+    margin: 0 10px !important;
+}
+
+/* range dot style */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    width: 15px !important;
+    height: 15px !important;
+    background: #fff !important;
+    border-radius: 50% !important;
+    cursor: pointer !important;
+    /* margin-top: -10px!important; */
+}
+
+.control-btn {
+    width: 30px !important;
+    height: 30px !important;
+}
